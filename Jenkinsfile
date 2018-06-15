@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Github Checkout') {
       steps {
@@ -7,11 +7,11 @@ pipeline {
       }
     }
     stage('Run Tests Automáticos') {
-      tools {
-        maven 'maven'
-      }
       steps {
         echo 'Corriendo los tests con maven'
+      }
+      tools {
+        maven 'maven'
       }
     }
     stage('Deploy para Test Humano') {
