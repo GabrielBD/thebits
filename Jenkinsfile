@@ -6,7 +6,7 @@ pipeline {
         echo 'Revisando modificaciones en el repositorio'
       }
     }
-    stage('Run Tests Automáticos') {
+    stage('Run Automatics Tests') {
       steps {
         echo 'Corriendo los tests con maven'
       }
@@ -14,9 +14,9 @@ pipeline {
         maven 'maven'
       }
     }
-    stage('Deploy para Test Humano') {
+    stage('Deploy to Stagging') {
       steps {
-        echo 'Enviar al entorno de Producción para Test Humanos'
+        echo 'Enviar al entorno de Producci�n para Test Humanos'
       }
     }
     stage('Slacks') {
